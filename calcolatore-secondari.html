@@ -82,13 +82,9 @@
 <!-- END SCRIPTS -->
 
 <script>
-    $.get("/snippets/navbar.html", function (data) {
+    $.get("/snippets/layout.html", function (data) {
         $("body").prepend(data);
     });
-    $.get("/snippets/sidebar.html", function (data) {
-        $("body").prepend(data);
-    });
-
     var price_data = {
         "ambulanza": {
             "vis": "70",

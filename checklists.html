@@ -40,10 +40,7 @@
     crossorigin="anonymous"></script>
 
 <script>
-    $.get("/snippets/navbar.html", function (data) {
-        $("body").prepend(data);
-    });
-    $.get("/snippets/sidebar.html", function (data) {
+    $.get("/snippets/layout.html", function (data) {
         $("body").prepend(data);
     });
 

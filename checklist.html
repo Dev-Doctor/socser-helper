@@ -66,10 +66,7 @@
 <script src="https://cdn.jsdelivr.net/gh/gitbrent/bootstrap4-toggle@3.6.1/js/bootstrap4-toggle.min.js"></script>
 
 <script>
-    $.get("/snippets/navbar.html", function (data) {
-        $("body").prepend(data);
-    });
-    $.get("/snippets/sidebar.html", function (data) {
+    $.get("/snippets/layout.html", function (data) {
         $("body").prepend(data);
     });
 
