@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checklist</title>
+    <!-- BOOTSTRAP -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <!-- BOOTSTRAP ICONS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.css">
+    <!-- BOOTSTRAP TOGGLE -->
+    <link href="https://cdn.jsdelivr.net/gh/gitbrent/bootstrap4-toggle@3.6.1/css/bootstrap4-toggle.min.css"
+        rel="stylesheet">
+</head>
+
+<body>
+    <div class="d-flex justify-content-center mt-3">
+        <div class="alert alert-warning d-flex align-items-center w-60" role="alert">
+            <i class="bi flex-shrink-0 me-2 bi-exclamation-triangle-fill"></i>
+            <div>
+                <i><strong>Oh oh!</strong> Sembra che tu sia finito su una pagina di sviluppo, è improbabile che ti
+                    serva questa pagina.</i>
+                <!-- <hr> -->
+            </div>
+        </div>
+    </div>
+    <div class="container mt-3">
+        <div class="row">
+            <div class="col">
+                <div class="row">
+                    <div class="col">
+                        <div class="mb-3">
+                            <label for="inputVehicleName" class="form-label">ID Mezzo:</label>
+                            <input type="text" class="form-control" id="inputVehicleName">
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <div class="mb-3">
+                            <label for="inputVehicleType" class="form-label">Tipo Mezzo:</label>
+                            <select class="form-select" aria-label="Default select example" id="inputVehicleType">
+                                <option value="ambulanza" selected>Ambulanza</option>
+                                <option value="doblo" selected>Doblo</option>
+                                <option value="macchina" selected>Macchina</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <label for="editableChecklists" class="form-label">Carica da esistente:</label>
+                        <div class="input-group mb-3">
+                            <select class="form-select form-control" aria-label="Default select example"
+                                id="editableChecklists">
+                                <option selected>Open this select menu</option>
+                            </select>
+                            <button class="btn btn-primary" type="button" id="loadChecklist"
+                                onclick="LoadExistingOne()">Carica</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <hr>
+        <div class="row">
+            <div class="col">
+                <div class="row">
+                    <div class="col">
+                        <h2>Materiali</h2>
+                    </div>
+                </div>
+                <div class="row">
+                    <form action="" id="MaterialForm">
+                        <div class="col">
+                            <div class="mb-3">
+                                <label for="inputMaterialName" class="form-label">Nome Materia:</label>
+                                <input type="text" class="form-control" id="inputMaterialName">
+                            </div>
+                            <div class="mb-3">
+                                <label for="inputMaterialDescription" class="form-label">Descrizione Materia:</label>
+                                <textarea class="form-control" id="inputMaterialDescription" rows="3"></textarea>
+                            </div>
+                            <div class="mb-3">
+                                <label for="inputMaterialSection" class="form-label">Categoria: </label>
+                                <select class="form-select" aria-label="Default select example"
+                                    id="inputMaterialSection">
+                                    <option value="-1" selected>Open this select menu</option>
+                                </select>
+                            </div>
+                            <div>
+                                <button type="submit" class="btn btn-success mb-3">Aggiungi Materiale</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <!-- ############################################################## -->
+            <div class="col">
+                <div class="row">
+                    <div class="col">
+                        <h2>Categorie</h2>
+                    </div>
+                </div>
+                <div class="row">
+                    <form action="" id="CategoryForm">
+                        <div class="col">
+                            <div class="mb-3">
+                                <label for="inputCategoryName" class="form-label">Nome Sezione:</label>
+                                <input type="text" class="form-control" id="inputCategoryName">
+                            </div>
+                            <div class="mb-3">
+                                <label for="inputCategoryDescription" class="form-label">Descrizione Sezione:</label>
+                                <textarea class="form-control" id="inputCategoryDescription" rows="3"></textarea>
+                            </div>
+                            <div class="mb-3">
+                                <label for="inputCategoryColor" class="form-label">Colore Sezione: </label>
+                                <input type="color" class="form-control form-control-color ms-2"
+                                    id="inputCategoryColor">
+                            </div>
+                            <div>
+                                <button type="submit" class="btn btn-success mb-3" id="createCategory">Add
+                                    Category</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <hr>
+        <div class="row">
+            <div class="col">
+                <h2>Categorie Aggiunte:</h2>
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th scope="col">Nome</th>
+                            <th scope="col">Descrizione</th>
+                            <th scope="col">Colore</th>
+                            <th scope="col">Rem</th>
+                        </tr>
+                    </thead>
+                    <tbody id="listCategories">
+                        <!-- <tr>
+                            <td>Ossigeno</td>
+                            <td>Nigga</td>
+                            <td style="background-color: red;"></td>
+                            <td><button class="btn btn-danger deleteLineBtn">x</button></td>
+                        </tr> -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <h2>Materiali Aggiunti:</h2>
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th scope="col">Nome</th>
+                            <th scope="col">Descrizione</th>
+                            <th scope="col">Posizione</th>
+                            <th scope="col">X</th>
+                        </tr>
+                    </thead>
+                    <tbody id="listMaterials">
+                        <!-- <tr>
+                            <td>Ossigeno</td>
+                            <td>Nigga</td>
+                            <td style="background-color: red;"></td>
+                            <td><button class="btn btn-danger deleteLineBtn">x</button></td>
+                        </tr> -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <h2>Output:</h2>
+                <div class="mb-3">
+                    <button class="btn btn-success" id="displayJson">GENERATE</button>
+                    <button class="btn btn-danger" id="clearJson">CLEAR</button>
+                    <br>
+                    <br>
+                    <textarea class="form-control" id="outputData" rows="25"></textarea>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+<!-- SCRIPTS -->
+<script src=" https://cdn.jsdelivr.net/npm/jquery@4.0.0/dist/jquery.min.js "></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+    integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+    crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.min.js"
+    integrity="sha384-G/EV+4j2dNv+tEPo3++6LCgdCROaejBqfUeNjuKAiuXbjrxilcCdDz6ZAVfHWe1Y"
+    crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/gh/gitbrent/bootstrap4-toggle@3.6.1/js/bootstrap4-toggle.min.js"></script>
+<script src="javascript/checklistFunctions.js"></script>
+
+<script>
+    $.get("/snippets/navbar.html", function (data) {
+        $("body").prepend(data);
+    });
+    $.get("/snippets/sidebar.html", function (data) {
+        $("body").prepend(data);
+    });
+
+    var current_data = {
+        "mezzo": "",
+        "tipo": "",
+        "nome": "",
+        "materiale": [],
+        "sezioni": []
+    };
+
+    function MakeId(str) {
+        let hash = 0;
+        for (let i = 0; i < str.length; i++) {
+            hash = (hash << 5) - hash + str.charCodeAt(i);
+            hash |= 0;
+        }
+        // Convert to positive and base36 string
+        return Math.abs(hash).toString(36);
+    }
+
+    // add material helper function 
+    function AddMaterial(nome, description, position) {
+        AddMaterial(nome, description, position, false);
+    }
+
+    function AddMaterial(nome, description, position, special) {
+        let new_material = {
+            "nome": nome,
+            "descrizione": description,
+            "type": "toggle",
+            "pos": position
+        }
+
+        console.log(`Materiale: ${nome}, ${description}, ${position}`)
+
+        if ($("#inputMaterialSection").find(":selected").val() == "-1" && !special) {
+            return;
+        }
+
+        current_data.materiale.push(new_material);
+
+        $('#listMaterials').append(`<tr><td>${nome}</td><td>${description}</td><td>${position}</td><td><button class="btn btn-danger deleteLineBtnMat">x</button></td></tr>`);
+    }
+
+    function AddSection(nome, description, color) {
+        let new_section = {
+            "nome": nome,
+            "descrizione": description,
+            "colore": color
+        };
+
+        console.log(`Sezione: ${nome}, ${description}, ${color}`)
+
+        // check if no duplicates
+        const index = current_data.sezioni.findIndex(
+            element => element.nome === nome
+        );
+
+        if (index !== -1) {
+            return;
+        }
+
+        // add if no duplicates
+        current_data.sezioni.push(new_section);
+
+        // append the new section
+        $('#inputMaterialSection').append($('<option>', {
+            value: MakeId(nome),
+            text: nome
+        }));
+
+        // append the section in the table
+        $('#listCategories').append(`<tr><td>${nome}</td><td>${description}</td><td style="background-color: ${color};"></td><td><button class="btn btn-danger deleteLineBtnSez">x</button></td></tr>`);
+    }
+
+    // print the json object for testing
+    function PrintData() {
+        console.log(current_data);
+    }
+
+    // load an existing checklist for editing
+    function LoadExistingOne() {
+        let selected_checklist = $("#editableChecklists").find(":selected").val();
+        if (selected_checklist == "-1") {
+            return;
+        }
+
+        fetch(`/checklists/${selected_checklist}.json`).then(response => response.json()).then(
+            data => {
+                $("#inputVehicleName").val(data.mezzo);
+                $("#inputVehicleType").val(data.tipo).change();
+
+                $.each(data.sezioni, function (i, v) {
+                    AddSection(v.nome, v.descrizione, v.colore);
+                });
+
+                $.each(data.materiale, function (i, v) {
+                    AddMaterial(v.nome, v.descrizione, v.pos, true);
+                });
+
+                current_data = data;
+            }
+        );
+    }
+
+    function DisplayJSON() {
+        var jsonPretty = JSON.stringify(current_data, null, '\t');
+
+        $("#outputData").val(jsonPretty);
+    }
+
+    function ClearOutput() {
+        $("#outputData").val(" ");
+    }
+
+    // LOGIC FOR THE DELETITION OF THE LINE
+    $(document).on('click', '.deleteLineBtnSez', function (e) {
+        let delete_value = $(this).closest('tr').children('td').eq(0).text();
+
+        // find index
+        const index = current_data.sezioni.findIndex(
+            element => element.nome === delete_value
+        );
+
+        // if valid delete
+        if (index !== -1) {
+            current_data.sezioni.splice(index, 1);
+        }
+
+        // DOES NOT WORK!!!!!!!!!!!!!!!!!!!!!!!!!!! TO FIX
+        $('#inputMaterialSection').filter(function () {
+            return $(this).text() === delete_value;
+        }).remove();
+
+        // delete parent tr so the whole line
+        $(this).closest('tr').remove();
+    });
+
+    $(document).on('click', '.deleteLineBtnMat', function (e) {
+        let delete_value = $(this).closest('tr').children('td').eq(0).text();
+
+        const index = current_data.materiale.findIndex(
+            element => element.nome === delete_value
+        );
+
+        if (index !== -1) {
+            current_data.materiale.splice(index, 1);
+        }
+
+        // delete parent tr so the whole line
+        $(this).closest('tr').remove();
+    });
+
+
+    // $('.deleteLineBtn').on('click', function (e) {
+    //     $(this).closest('tr').remove();
+    // });
+
+    // handles the addition of a new section
+    $('#CategoryForm').on('submit', function (e) {
+        e.preventDefault();
+
+        let nome = $("#inputCategoryName").val();
+        let description = $("#inputCategoryDescription").val();
+        let color = $("#inputCategoryColor").val();
+
+        AddSection(nome, description, color);
+    });
+
+    // handles the addition of a new material
+    $('#MaterialForm').on('submit', function (e) {
+        e.preventDefault();
+
+        let nome = $("#inputMaterialName").val();
+        let description = $("#inputMaterialDescription").val();
+        let section = $("#inputMaterialSection").val();
+
+        AddMaterial(nome, description, section);
+    });
+
+    $("#displayJson").on("click", DisplayJSON);
+    $("#clearJson").on("click", ClearOutput);
+
+    $(document).ready(function () {
+        LoadChecklists().then(function (checklists) {
+            checklists.forEach(function (element) {
+                $('#editableChecklists').append($('<option>', {
+                    value: element.id,
+                    text: element.data.nome
+                }));
+            });
+        });
+    });
+
+</script>
+
+</html>

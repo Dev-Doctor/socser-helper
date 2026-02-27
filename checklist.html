@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checklist</title>
+    <!-- BOOTSTRAP -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <!-- BOOTSTRAP ICONS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.css">
+    <!-- BOOTSTRAP TOGGLE -->
+    <link href="https://cdn.jsdelivr.net/gh/gitbrent/bootstrap4-toggle@3.6.1/css/bootstrap4-toggle.min.css"
+        rel="stylesheet">
+</head>
+
+<body>
+    <!-- TOP BAR -->
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col">
+            </div>
+        </div>
+    </div>
+
+    <!-- MATERIAL HOLDER -->
+    <div id="start0412" class="container-fluid p-0">
+
+    </div>
+
+    <!-- TESTING -->
+    <!-- <h5 class="sticky-top testing p-2">${v.nome}</h5>
+    <div class="card">
+        <div class="card-body">
+            <div class="d-flex">
+                <div class="w-100">
+                    <span class="h5">Ambulanza - 06</span>
+                </div>
+                <div class="ml-auto">
+                    <input type="checkbox" data-toggle="toggle" data-on="Controllato" data-off="Manca">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <p class="card-text">
+                        NIGGA
+                    </p>
+                </div>
+                <div class="col">
+
+                </div>
+            </div>
+        </div>
+    </div> -->
+</body>
+
+<!-- SCRIPTS -->
+<script src=" https://cdn.jsdelivr.net/npm/jquery@4.0.0/dist/jquery.min.js "></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+    integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+    crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.min.js"
+    integrity="sha384-G/EV+4j2dNv+tEPo3++6LCgdCROaejBqfUeNjuKAiuXbjrxilcCdDz6ZAVfHWe1Y"
+    crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/gh/gitbrent/bootstrap4-toggle@3.6.1/js/bootstrap4-toggle.min.js"></script>
+
+<script>
+    $.get("/snippets/navbar.html", function (data) {
+        $("body").prepend(data);
+    });
+    $.get("/snippets/sidebar.html", function (data) {
+        $("body").prepend(data);
+    });
+
+    function MakeId(str) {
+        let hash = 0;
+        for (let i = 0; i < str.length; i++) {
+            hash = (hash << 5) - hash + str.charCodeAt(i);
+            hash |= 0;
+        }
+        // Convert to positive and base36 string
+        return Math.abs(hash).toString(36);
+    }
+
+    var scheda_materiale = '<div class="card"><div class="card-body"><div class="d-flex"><div class="w-100"><span class="h5">Ambulanza - 06</span></div><div class="ml-auto pe-3"><input type="checkbox" data-toggle="toggle" data-on="Controllato" data-off="Manca"></div></div> <div class="row"> <div class="col"> <p class="card-text"> NIGGA </p> </div> <div class="col"></div></div> </div> </div>';
+
+    $(document).ready(function () {
+        var urlParams = new URLSearchParams(window.location.search);
+
+        if (!urlParams.has('vehicle')) {
+            // go back
+        }
+
+        var vehicle = urlParams.get('vehicle');
+        fetch(`/checklists/${vehicle}.json`).then(response => response.json()).then(
+            data => {
+                // Sezioni
+                $.each(data.sezioni, function (i, v) {
+
+                    if (v?.colore !== undefined) {
+                        $('<h5>', {
+                            class: 'sticky-top testing p-2',
+                            text: v.nome,
+                            css: {
+                                backgroundColor: v.colore
+                            }
+                        }).appendTo('#start0412');
+                    } else {
+                        $("#start0412").append(`<h5 class="sticky-top testing p-2 m-0">${v.nome}</h5>`);
+                    }
+
+                    console.log(`Sezione: ${v.nome} con ID: ${MakeId(v.nome)}`)
+
+                    $("#start0412").append(`<div class="row m-0" id="${MakeId(v.nome)}"></div>`);
+                });
+
+                // Materiali
+                $.each(data.materiale, function (i, v) {
+                    console.log(`Materiale: ${v.nome} e ${v.pos} e ${MakeId(v.pos)}`); // data-onstyle="success" data-offstyle="danger"
+                    $(`#${v.pos}`).append(`<div class="card"><div class="card-body"><div class="d-flex"><div class="w-100"><span class="h5">${v.nome}</span></div><div class="ml-auto"><input type="checkbox" class="toggles" data-toggle="toggle" data-on="✅" data-off="❌" data-onstyle="outline-success" data-offstyle="outline-danger"></div></div> <div class="row"> <div class="col"> <p class="card-text"> ${v.descrizione} </p> </div> <div class="col"></div></div> </div> </div>`);
+                });
+
+
+                $('.toggles').bootstrapToggle();
+            }
+        );
+    });
+</script>
+
+<style>
+    .testing {
+        background-color: orangered;
+        color: white;
+        width: 100%;
+    }
+</style>
+
+</html>

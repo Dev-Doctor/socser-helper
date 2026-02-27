@@ -1,0 +1,204 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calcolatore Secondari</title>
+    <!-- BOOTSTRAP -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <!-- BOOTSTRAP ICONS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.css">
+    <!-- BOOTSTRAP TOGGLE -->
+    <link href="https://cdn.jsdelivr.net/gh/gitbrent/bootstrap4-toggle@3.6.1/css/bootstrap4-toggle.min.css"
+        rel="stylesheet">
+</head>
+
+<body>
+    <div class="container mt-3">
+        <div class="row">
+            <form id="calculateForm">
+                <!-- ######################## TIPO SERVIZIO ######################## -->
+                <div class="mb-3">
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="tipoServizio" id="ServizioRadio1"
+                            value="dimissione" checked>
+                        <label class="form-check-label" for="inlineRadio2">Trasporto senza attesa (es.
+                            Dimissione)</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="tipoServizio" id="ServizioRadio2"
+                            value="visita">
+                        <label class="form-check-label" for="inlineRadio1">Trasporto con attesa (es. Visita)</label>
+                    </div>
+                </div>
+                <!-- ######################## MEZZO ######################## -->
+                <div class="mb-3">
+                    <label for="InputVehicle" class="form-label">Mezzo:</label>
+                    <select name="" id="InputVehicle" class="form-select">
+                        <option value="amb">Ambulanza (40€ / 70€)</option>
+                        <option value="dob">Doblò (35€ / 65€)</option>
+                        <option value="mac">Macchina (20€ / 35€)</option>
+                    </select>
+                </div>
+                <!-- ######################## CHILOMETRI PERCORSI ######################## -->
+                <div class="mb-3">
+                    <label for="chilometriInput" class="form-label">Chilometri del servizio:</label>
+                    <div class="input-group">
+                        <input type="number" class="form-control" id="chilometriInput" min="0">
+                        <span class="input-group-text" id="KmPriceLabel">?</span>
+                    </div>
+                    <div class="form-text">Inserire il <b>TOTALE</b> dei chilometri, i 15km inclusi vengono tolti automaticamente.</div>
+                </div>
+                <!-- ######################## TEMPO DI ATTESA ######################## -->
+                <div class="mb-3">
+                    <label for="attesaInput" class="form-label" id="attesaHelp">Tempo di attesa (in minuti):</label>
+                    <div class="input-group">
+                        <input type="number" class="form-control" id="attesaInput" min="0" disabled>
+                        <span class="input-group-text" id="WaitingPriceLabel">?</span>
+                    </div>
+                    <div class="form-text">Inserire il <b>TOTALE</b> dei minuti passati in attesa, l'ora e mezza inclusi vengono tolti automaticamente.</div>
+                </div>
+                <button type="submit" class="btn btn-primary">Calcola</button>
+            </form>
+        </div>
+        <div class="row">
+            <div class="col">
+                <h1 id="result"></h1>
+                <i><h4 id="formule"></h4></i>
+            </div>
+        </div>
+    </div>
+</body>
+
+<!-- SCRIPTS -->
+<script src=" https://cdn.jsdelivr.net/npm/jquery@4.0.0/dist/jquery.min.js "></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+    integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+    crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.min.js"
+    integrity="sha384-G/EV+4j2dNv+tEPo3++6LCgdCROaejBqfUeNjuKAiuXbjrxilcCdDz6ZAVfHWe1Y"
+    crossorigin="anonymous"></script>
+<!-- END SCRIPTS -->
+
+<script>
+    $.get("/snippets/navbar.html", function (data) {
+        $("body").prepend(data);
+    });
+    $.get("/snippets/sidebar.html", function (data) {
+        $("body").prepend(data);
+    });
+
+    var price_data = {
+        "ambulanza": {
+            "vis": "70",
+            "dim": "40",
+            "km": "0.80",
+            "min": "7"
+        },
+        "doblo": {
+            "vis": "65",
+            "dim": "35",
+            "km": "0.80",
+            "min": "7"
+        },
+        "macchina": {
+            "vis": "35",
+            "dim": "20",
+            "km": "0.50",
+            "min": "4"
+        },
+    }
+
+    function GetVehicleData(vehicle) {
+        let result = null;
+        switch (vehicle) {
+            case "amb":
+                result = price_data.ambulanza;
+                break;
+            case "dob":
+                result = price_data.doblo;
+                break;
+            case "mac":
+                result = price_data.macchina;
+                break;
+        }
+        return result;
+    }
+
+    $('#InputVehicle').change(function (e) {
+        var valueSelected = $(this).val();
+
+        let selectedOne = GetVehicleData(valueSelected);
+
+        $("#KmPriceLabel").text(`${selectedOne.km} €/km`);
+        $("#WaitingPriceLabel").text(`${selectedOne.min}€/15min`);
+    });
+
+    // Source - https://stackoverflow.com/a/13152970
+    // Posted by Ram, modified by me
+    // Retrieved 2026-02-23, License - CC BY-SA 4.0
+    $('input[type=radio][name=tipoServizio]').change(function () {
+        console.log(this.value);
+        if (this.value == 'visita') {
+            $("#attesaInput").prop("disabled", false);
+            $("option[value=amb]").text(`Ambulanza (${price_data.ambulanza.vis}€)`);
+            $("option[value=dob]").text(`Doblò (${price_data.doblo.vis}€)`);
+            $("option[value=mac]").text(`Macchina (${price_data.macchina.vis}€)`);
+        }
+        else if (this.value == 'dimissione') {
+            $("#attesaInput").prop("disabled", true);
+            $("option[value=amb]").text(`Ambulanza (${price_data.ambulanza.dim}€)`);
+            $("option[value=dob]").text(`Doblò (${price_data.doblo.dim}€)`);
+            $("option[value=mac]").text(`Macchina (${price_data.macchina.dim}€)`);
+        }
+    });
+
+    $('#calculateForm').on('submit', function (e) {
+        e.preventDefault();
+
+        let data = GetVehicleData($("#InputVehicle").val());
+        let kilometers = parseInt($("#chilometriInput").val()) - 15;
+
+        if (kilometers < 0) {
+            kilometers = 0;
+        }
+
+        var result = parseFloat(data.km) * parseInt(kilometers);
+        var formule = `Formula: ${data.km} × ${kilometers}`;
+        
+        if ($('input[type=radio][name=tipoServizio]:checked').val() == "visita") {
+            let minutes = $("#attesaInput").val();
+            let quarters = parseInt(minutes / 15);
+
+            // se è maggiore della divisone vuol dire che avanza del tempo che rientrerà in un quarto aggiuntivo
+            // (es. 50 / 15 = 3 con resto di 5)
+            if(minutes % 15 !== 0) {
+                quarters += 1;
+            }
+
+            // tolta l'ora e mezza inclusa con il prezzo base della visita
+            quarters -= 6;
+            
+            if(quarters < 0) {
+                quarters = 0;
+            }
+            
+            result += parseInt(data.min) * quarters + parseInt(data.vis);
+            formule += ` + ${data.min} × ${quarters} + ${data.vis}`;
+        } else {
+            result += parseInt(data.dim);
+            formule += ` + ${data.dim}`;
+        }
+
+        $("#result").text(`Costo del trasporto: ${result}€`);
+        $("#formule").text(formule);
+    });
+
+    $(document).ready(function () {
+        $('input[type=radio][name=tipoServizio]:checked').trigger("change");
+        $("#InputVehicle").trigger("change");
+    });
+</script>
+
+</html>

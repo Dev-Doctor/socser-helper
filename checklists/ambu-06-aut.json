@@ -1,0 +1,146 @@
+{
+	"mezzo": "06",
+	"nome": "Ambulanza - 06 Autista",
+	"tipo": "ambulanza",
+	"materiale": [
+		{
+			"nome": "Controllo + pulizia carrozzeria",
+			"descrizione": "",
+			"type": "toggle",
+			"pos": "3azdz8"
+		},
+		{
+			"nome": "Controllo gomme",
+			"descrizione": "Verificare che siano intatte e gonfie",
+			"type": "toggle",
+			"pos": "3azdz8"
+		},
+		{
+			"nome": "Controllo carburante",
+			"descrizione": "Il serbatoio deve essere pieno più della metà",
+			"type": "toggle",
+			"pos": "3azdz8"
+		},
+		{
+			"nome": "Spia olio funzionante",
+			"descrizione": "",
+			"type": "toggle",
+			"pos": "3azdz8"
+		},
+		{
+			"nome": "Controllo luci, frecce e stop",
+			"descrizione": "",
+			"type": "toggle",
+			"pos": "3azdz8"
+		},
+		{
+			"nome": "Controllo sirene",
+			"descrizione": "",
+			"type": "toggle",
+			"pos": "3azdz8"
+		},
+		{
+			"nome": "Controllo strobo",
+			"descrizione": "",
+			"type": "toggle",
+			"pos": "3azdz8"
+		},
+		{
+			"nome": "Pulizia interna vano guida",
+			"descrizione": "",
+			"type": "toggle",
+			"pos": "3azdz8"
+		},
+		{
+			"nome": "Controllo bombole O₂ da 7L (vano sanitario)",
+			"descrizione": "",
+			"type": "toggle",
+			"pos": "3azdz8"
+		},
+		{
+			"nome": "Controllo luci vano sanitario",
+			"descrizione": "",
+			"type": "toggle",
+			"pos": "3azdz8"
+		},
+		{
+			"nome": "Supporto telefono e caricabatterie",
+			"descrizione": "",
+			"type": "toggle",
+			"pos": "3azdz8"
+		},
+		{
+			"nome": "Controllo quadro elettrico",
+			"descrizione": "",
+			"type": "toggle",
+			"pos": "3azdz8"
+		},
+		{
+			"nome": "Torcia elettrica + cono giallo",
+			"descrizione": "",
+			"type": "toggle",
+			"pos": "3azdz8"
+		},
+		{
+			"nome": "Tessera magnetica rifornimento carburante",
+			"descrizione": "Controllare se presente",
+			"type": "toggle",
+			"pos": "3azdz8"
+		},
+		{
+			"nome": "2 Bollettari 118 (quello in uso + scorta)",
+			"descrizione": "",
+			"type": "toggle",
+			"pos": "3azdz8"
+		},
+		{
+			"nome": "Registro per scarico Km",
+			"descrizione": "",
+			"type": "toggle",
+			"pos": "3azdz8"
+		},
+		{
+			"nome": "Autorizzazione ASL esposta",
+			"descrizione": "",
+			"type": "toggle",
+			"pos": "3azdz8"
+		},
+		{
+			"nome": "Foglio illustrativo disinfezione mani",
+			"descrizione": "",
+			"type": "toggle",
+			"pos": "3azdz8"
+		},
+		{
+			"nome": "Tariffario esposto",
+			"descrizione": "",
+			"type": "toggle",
+			"pos": "3azdz8"
+		},
+		{
+			"nome": "Ortelio",
+			"descrizione": "",
+			"type": "toggle",
+			"pos": "3azdz8"
+		},
+		{
+			"nome": "Estintore",
+			"descrizione": "Controllare estintore",
+			"type": "toggle",
+			"pos": "3azdz8"
+		},
+		{
+			"nome": "Crick e ruota di scorta",
+			"descrizione": "Controllare se presenti",
+			"type": "toggle",
+			"pos": "3azdz8"
+		}
+	],
+	"sezioni": [
+		{
+			"nome": "Vano Guida",
+			"descrizione": "",
+			"colore": "#3584e4"
+		}
+	]
+}

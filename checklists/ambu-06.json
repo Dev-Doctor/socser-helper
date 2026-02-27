@@ -1,0 +1,909 @@
+{
+	"mezzo": "ambu-06",
+	"tipo": "ambulanza",
+	"nome": "Ambulanza - 06",
+	"materiale": [
+		{
+			"nome": "Mascherine x5",
+			"descrizione": "",
+			"type": "toggle",
+			"pos": "shfdk8"
+		},
+		{
+			"nome": "Sacchetto Vomito x2",
+			"descrizione": "",
+			"type": "toggle",
+			"pos": "shfdk8"
+		},
+		{
+			"nome": "Traversina x2",
+			"descrizione": "",
+			"type": "toggle",
+			"pos": "shfdk8"
+		},
+		{
+			"nome": "Sondino aspirazione arancione",
+			"descrizione": "Controllare scadenza",
+			"type": "toggle",
+			"pos": "shfdk8"
+		},
+		{
+			"nome": "Sondino aspirazione verde",
+			"descrizione": "Controllare scadenza",
+			"type": "toggle",
+			"pos": "shfdk8"
+		},
+		{
+			"nome": "Sondino aspirazione rossa",
+			"descrizione": "Controllare scadenza",
+			"type": "toggle",
+			"pos": "shfdk8"
+		},
+		{
+			"nome": "Lacci emostatici x2",
+			"descrizione": "",
+			"type": "toggle",
+			"pos": "uz61xy"
+		},
+		{
+			"nome": "Forbice Robin",
+			"descrizione": "",
+			"type": "toggle",
+			"pos": "uz61xy"
+		},
+		{
+			"nome": "Forbice bottonuta",
+			"descrizione": "",
+			"type": "toggle",
+			"pos": "uz61xy"
+		},
+		{
+			"nome": "Canule di misure azzurra, rossa, gialla e verde",
+			"descrizione": "Controllare scadenza e integrità",
+			"type": "toggle",
+			"pos": "uz61xy"
+		},
+		{
+			"nome": "Clamp per cordone ombelicale x5",
+			"descrizione": "Controllare scadenza e integrità",
+			"type": "toggle",
+			"pos": "x0wzg4"
+		},
+		{
+			"nome": "Metallina x1",
+			"descrizione": "",
+			"type": "toggle",
+			"pos": "x0wzg4"
+		},
+		{
+			"nome": "Tourniquet",
+			"descrizione": "",
+			"type": "toggle",
+			"pos": "x0wzg4"
+		},
+		{
+			"nome": "Termometro ad infrarossi",
+			"descrizione": "Controllare funzionalità e carica",
+			"type": "toggle",
+			"pos": "d5epuz"
+		},
+		{
+			"nome": "Misuratore automatico di pressione con bracciale adulto",
+			"descrizione": "Controllare funzionalità e integrità",
+			"type": "toggle",
+			"pos": "d5epuz"
+		},
+		{
+			"nome": "Saturimetro con sonda adulto e guscio",
+			"descrizione": "Controllare funzionalità e integrità",
+			"type": "toggle",
+			"pos": "d5epuz"
+		},
+		{
+			"nome": "Acqua fisiologica x2",
+			"descrizione": "Controllare scadenza",
+			"type": "toggle",
+			"pos": "84eahc"
+		},
+		{
+			"nome": "Rivelatore glicemia con pungidito e strisce reattive (q.b.)",
+			"descrizione": "Controllare funzionalità e carica",
+			"type": "toggle",
+			"pos": "84eahc"
+		},
+		{
+			"nome": "Termometro timpanico",
+			"descrizione": "Controllare funzionalità e se ci sono i coni copri sonda",
+			"type": "toggle",
+			"pos": "84eahc"
+		},
+		{
+			"nome": "Acqua ossigenata x1",
+			"descrizione": "Controllare scadenza",
+			"type": "toggle",
+			"pos": "84eahc"
+		},
+		{
+			"nome": "Sfigmo manuale con fonendoscopio",
+			"descrizione": "",
+			"type": "toggle",
+			"pos": "84eahc"
+		},
+		{
+			"nome": "Ghiaccio istantaneo x2",
+			"descrizione": "",
+			"type": "toggle",
+			"pos": "jsrv6m"
+		},
+		{
+			"nome": "Garze sterili x10",
+			"descrizione": "Controllare scadenza e integrità",
+			"type": "toggle",
+			"pos": "jsrv6m"
+		},
+		{
+			"nome": "Garze non sterili (qb)",
+			"descrizione": "",
+			"type": "toggle",
+			"pos": "jsrv6m"
+		},
+		{
+			"nome": "Bende di misure 8 e 10",
+			"descrizione": "Controllare scadenza e integrità",
+			"type": "toggle",
+			"pos": "jsrv6m"
+		},
+		{
+			"nome": "Nastro medico x2",
+			"descrizione": "",
+			"type": "toggle",
+			"pos": "jsrv6m"
+		},
+		{
+			"nome": "Ambu monouso",
+			"descrizione": "da sistemare",
+			"type": "toggle",
+			"pos": "9ud9tv"
+		},
+		{
+			"nome": "Maschere per ambu di misure gialla, rossa e blu",
+			"descrizione": "Controllare scadenza e integrità",
+			"type": "toggle",
+			"pos": "9ud9tv"
+		},
+		{
+			"nome": "Maschera per ossigeno x1",
+			"descrizione": "Controllare scadenza e integrità",
+			"type": "toggle",
+			"pos": "olctnt"
+		},
+		{
+			"nome": "DAE",
+			"descrizione": "Segue nella prossima sezione...",
+			"type": "toggle",
+			"pos": "olctnt"
+		},
+		{
+			"nome": "Controllare funzonalità",
+			"descrizione": "<b>NON ACCENDERE</b>, controllare se il LED lampeggia",
+			"type": "toggle",
+			"pos": "1g14"
+		},
+		{
+			"nome": "Piastre collegate",
+			"descrizione": "Controllare scadenza e integrità",
+			"type": "toggle",
+			"pos": "1g14"
+		},
+		{
+			"nome": "Chiave Pediatrica",
+			"descrizione": "",
+			"type": "toggle",
+			"pos": "1g14"
+		},
+		{
+			"nome": "Piastre di scorta x1",
+			"descrizione": "Controllare scadenza e integrità",
+			"type": "toggle",
+			"pos": "1g14"
+		},
+		{
+			"nome": "Batteria di scorta",
+			"descrizione": "Controllare scadenza",
+			"type": "toggle",
+			"pos": "1g14"
+		},
+		{
+			"nome": "Rasoi x2",
+			"descrizione": "",
+			"type": "toggle",
+			"pos": "1g14"
+		},
+		{
+			"nome": "KIT Borsa Pediatrica",
+			"descrizione": "Segue nella prossima sezione...",
+			"type": "toggle",
+			"pos": "psms3x"
+		},
+		{
+			"nome": "KIT Infettivi",
+			"descrizione": "Segue nella prossima sezione...",
+			"type": "toggle",
+			"pos": "psms3x"
+		},
+		{
+			"nome": "KIT Scorta ACC",
+			"descrizione": "Segue nella prossima sezione...",
+			"type": "toggle",
+			"pos": "psms3x"
+		},
+		{
+			"nome": "Ambu pediatrico con resevoire e raccordo O₂ + filtro",
+			"descrizione": "Controllare integrità",
+			"type": "toggle",
+			"pos": "emz9t9"
+		},
+		{
+			"nome": "Mascherine pediatriche per O₂ x2",
+			"descrizione": "Controllare scadenza e integrità",
+			"type": "toggle",
+			"pos": "emz9t9"
+		},
+		{
+			"nome": "Maschere ambu <b>MONOUSO</b> di misure 0, 1, 2 e 3",
+			"descrizione": "Controllare scadenza e integrità",
+			"type": "toggle",
+			"pos": "emz9t9"
+		},
+		{
+			"nome": "Sonda saturimetro pediatrica ",
+			"descrizione": "Controllare integrità",
+			"type": "toggle",
+			"pos": "emz9t9"
+		},
+		{
+			"nome": "Sonda saturimetro neonatale",
+			"descrizione": "Controllare scadenza e integrità",
+			"type": "toggle",
+			"pos": "emz9t9"
+		},
+		{
+			"nome": "Sfigmo (manuale + automatico) e fonendo pediatrici",
+			"descrizione": "",
+			"type": "toggle",
+			"pos": "emz9t9"
+		},
+		{
+			"nome": "2 Sondini di misure diverse (bianco, nero)",
+			"descrizione": "Controllare scadenza e integrità",
+			"type": "toggle",
+			"pos": "emz9t9"
+		},
+		{
+			"nome": "3 Cannule di misure diverse (bianca, nera, blu)",
+			"descrizione": "Controllare scadenza e integrità",
+			"type": "toggle",
+			"pos": "emz9t9"
+		},
+		{
+			"nome": "Camice x3",
+			"descrizione": "",
+			"type": "toggle",
+			"pos": "avp73i"
+		},
+		{
+			"nome": "Cappello x3",
+			"descrizione": "",
+			"type": "toggle",
+			"pos": "avp73i"
+		},
+		{
+			"nome": "Calzari x3",
+			"descrizione": "",
+			"type": "toggle",
+			"pos": "avp73i"
+		},
+		{
+			"nome": "Occhiali Protettivi x3",
+			"descrizione": "",
+			"type": "toggle",
+			"pos": "avp73i"
+		},
+		{
+			"nome": "Mascherina FFP3 x3",
+			"descrizione": "",
+			"type": "toggle",
+			"pos": "avp73i"
+		},
+		{
+			"nome": "Busta di disinfettante monouso x5",
+			"descrizione": "Controllare scadenza",
+			"type": "toggle",
+			"pos": "avp73i"
+		},
+		{
+			"nome": "Sacchetto Aspiratore Grande x1",
+			"descrizione": "",
+			"type": "toggle",
+			"pos": "i1904r"
+		},
+		{
+			"nome": "Tubo di aspirazione secreti x1",
+			"descrizione": "",
+			"type": "toggle",
+			"pos": "i1904r"
+		},
+		{
+			"nome": "Sacchetto Aspiratore Piccolo x1",
+			"descrizione": "",
+			"type": "toggle",
+			"pos": "i1904r"
+		},
+		{
+			"nome": "3 Maschere ambu <b>MONOUSO</b> di misure 3, 4, e 5",
+			"descrizione": "Controllare scadenza e integrità",
+			"type": "toggle",
+			"pos": "i1904r"
+		},
+		{
+			"nome": "Lenzuola monouso bianche x10",
+			"descrizione": "",
+			"type": "toggle",
+			"pos": "dw60gc"
+		},
+		{
+			"nome": "Federa x5",
+			"descrizione": "",
+			"type": "toggle",
+			"pos": "dw60gc"
+		},
+		{
+			"nome": "Una scatola di guanti per misura S",
+			"descrizione": "",
+			"type": "toggle",
+			"pos": "dw60gc"
+		},
+		{
+			"nome": "Una scatola di guanti per misura M",
+			"descrizione": "",
+			"type": "toggle",
+			"pos": "dw60gc"
+		},
+		{
+			"nome": "Una scatola di guanti per misura L",
+			"descrizione": "",
+			"type": "toggle",
+			"pos": "dw60gc"
+		},
+		{
+			"nome": "Torce antivento x5",
+			"descrizione": "",
+			"type": "toggle",
+			"pos": "qcngdk"
+		},
+		{
+			"nome": "KIT MAXIEMERGENZA",
+			"descrizione": "Deve contenere: Braccialetti per sweeping triage, fascia gialla, busta maxiemergenza (<b>NON APRIRE LA BUSTA</b>)",
+			"type": "toggle",
+			"pos": "qcngdk"
+		},
+		{
+			"nome": "4 Cinghie con moschettone per scoop con custodia",
+			"descrizione": "",
+			"type": "toggle",
+			"pos": "xyc7d5"
+		},
+		{
+			"nome": "Rotolo di carta x1",
+			"descrizione": "",
+			"type": "toggle",
+			"pos": "xyc7d5"
+		},
+		{
+			"nome": "Sacchetto per rifiuti grande x3",
+			"descrizione": "",
+			"type": "toggle",
+			"pos": "xyc7d5"
+		},
+		{
+			"nome": "Cuscino x2",
+			"descrizione": "",
+			"type": "toggle",
+			"pos": "xyc7d5"
+		},
+		{
+			"nome": "3 Steccobende di misura diversa (piccola, media, grande)",
+			"descrizione": "",
+			"type": "toggle",
+			"pos": "xyc7d5"
+		},
+		{
+			"nome": "Vacuum baby FIX",
+			"descrizione": "",
+			"type": "toggle",
+			"pos": "xyc7d5"
+		},
+		{
+			"nome": "Maschere adulto per O₂ x4",
+			"descrizione": "Controllare scadenza e integrità",
+			"type": "toggle",
+			"pos": "pzsw00"
+		},
+		{
+			"nome": "Mascherine (q.b.)",
+			"descrizione": "",
+			"type": "toggle",
+			"pos": "pzsw00"
+		},
+		{
+			"nome": "3 Bende coesive di misura diversa",
+			"descrizione": "Controllare integrità e se sono quasi finite",
+			"type": "toggle",
+			"pos": "6qajny"
+		},
+		{
+			"nome": "Cerotto in seta x1",
+			"descrizione": "",
+			"type": "toggle",
+			"pos": "6qajny"
+		},
+		{
+			"nome": "Conf. ghiaccio secco x4",
+			"descrizione": "",
+			"type": "toggle",
+			"pos": "6qajny"
+		},
+		{
+			"nome": "Garze sterili x15",
+			"descrizione": "Controllare scadenza e integrità",
+			"type": "toggle",
+			"pos": "6qajny"
+		},
+		{
+			"nome": "Garze non sterili (q.b.)",
+			"descrizione": "Controllare scadenza e integrità",
+			"type": "toggle",
+			"pos": "6qajny"
+		},
+		{
+			"nome": "Garze non sterili (q.b.)",
+			"descrizione": "",
+			"type": "toggle",
+			"pos": "6qajny"
+		},
+		{
+			"nome": "3 Sondini di diversa misura (arancio, rosso e verde)",
+			"descrizione": "Controllare scadenza e integrità",
+			"type": "toggle",
+			"pos": "rdbjsd"
+		},
+		{
+			"nome": "Telino Sterile x2",
+			"descrizione": "Controllare scadenza e integrità",
+			"type": "toggle",
+			"pos": "rdbjsd"
+		},
+		{
+			"nome": "Metallina x1",
+			"descrizione": "",
+			"type": "toggle",
+			"pos": "rdbjsd"
+		},
+		{
+			"nome": "Filtro Ambu x1",
+			"descrizione": "Controllare scadenza e integrità",
+			"type": "toggle",
+			"pos": "rdbjsd"
+		},
+		{
+			"nome": "Pocket Mask",
+			"descrizione": "Controllare integrità",
+			"type": "toggle",
+			"pos": "rdbjsd"
+		},
+		{
+			"nome": "Sacchetto Vomito x3",
+			"descrizione": "",
+			"type": "toggle",
+			"pos": "rdbjsd"
+		},
+		{
+			"nome": "Acqua fisiologica da 100ml x2",
+			"descrizione": "Controllare scadenza",
+			"type": "toggle",
+			"pos": "rdbjsd"
+		},
+		{
+			"nome": "Una valvola di raccordo bi-conica per aspiratore",
+			"descrizione": "Controllare scadenza e integrità",
+			"type": "toggle",
+			"pos": "rdbjsd"
+		},
+		{
+			"nome": "PULITO e VUOTO",
+			"descrizione": "Svuotare, cambiare il sacchetto e pulire vano rifiuti",
+			"type": "toggle",
+			"pos": "e3z89v"
+		},
+		{
+			"nome": "KIT Immobilizzazione per la spinale",
+			"descrizione": "- Coppia fermacapi per adulto;\n- 2 Fiondine;\n- Il ragno adulto;",
+			"type": "toggle",
+			"pos": "h2k7xe"
+		},
+		{
+			"nome": "KIT SCOOP (Borsa rossa)",
+			"descrizione": "- Base poggiatesta;\n- 2 fermacapi;\n- 2 Fiondine;\n- Cinghia ad H;",
+			"type": "toggle",
+			"pos": "h2k7xe"
+		},
+		{
+			"nome": "5 Collari di diversa misura (fuxia, azzurro, blu, giallo, arancione)",
+			"descrizione": "",
+			"type": "toggle",
+			"pos": "h2k7xe"
+		},
+		{
+			"nome": "Bombola Ossigeno 3L n°1",
+			"descrizione": "Controllare livello di ossigeno",
+			"type": "toggle",
+			"pos": "rpo687"
+		},
+		{
+			"nome": "Bombola Ossigeno 3L n°2",
+			"descrizione": "Controllare livello di ossigeno",
+			"type": "toggle",
+			"pos": "rpo687"
+		},
+		{
+			"nome": "Bombola Ossigeno 3L n°3",
+			"descrizione": "Controllare livello di ossigeno",
+			"type": "toggle",
+			"pos": "rpo687"
+		},
+		{
+			"nome": "Bombola Ossigeno 7L n°1",
+			"descrizione": "Controllare livello di ossigeno",
+			"type": "toggle",
+			"pos": "rpo687"
+		},
+		{
+			"nome": "Bombola Ossigeno 7L n°2",
+			"descrizione": "Controllare livello di ossigeno",
+			"type": "toggle",
+			"pos": "rpo687"
+		},
+		{
+			"nome": "CONTROLLO BOMBOLE DA 7 LITRI",
+			"descrizione": "La capacità di ossigeno complessiva per le 2 bombole da 7L deve essere di almeno di 700 litri, ossia la somma delle pressioni lette nei manometri delle 2 bombole deve essere di almeno 100 bar",
+			"type": "toggle",
+			"pos": "rpo687"
+		},
+		{
+			"nome": "Pompa per materassino a depressione",
+			"descrizione": "",
+			"type": "toggle",
+			"pos": "msi2e"
+		},
+		{
+			"nome": "Telo impermeabile per la pioggia",
+			"descrizione": "",
+			"type": "toggle",
+			"pos": "msi2e"
+		},
+		{
+			"nome": "Caschetti anti-infortunistici x4",
+			"descrizione": "",
+			"type": "toggle",
+			"pos": "qzc3jm"
+		},
+		{
+			"nome": "Materasso a depressione con cinghie",
+			"descrizione": "",
+			"type": "toggle",
+			"pos": "qzc3jm"
+		},
+		{
+			"nome": "Pedi mate",
+			"descrizione": "",
+			"type": "toggle",
+			"pos": "qzc3jm"
+		},
+		{
+			"nome": "Sega",
+			"descrizione": "",
+			"type": "toggle",
+			"pos": "8l82so"
+		},
+		{
+			"nome": "Piede di porco",
+			"descrizione": "",
+			"type": "toggle",
+			"pos": "8l82so"
+		},
+		{
+			"nome": "Forbicione",
+			"descrizione": "",
+			"type": "toggle",
+			"pos": "8l82so"
+		},
+		{
+			"nome": "3 paia di guanti da lavoro",
+			"descrizione": "",
+			"type": "toggle",
+			"pos": "8l82so"
+		},
+		{
+			"nome": "Mazzetta",
+			"descrizione": "",
+			"type": "toggle",
+			"pos": "8l82so"
+		},
+		{
+			"nome": "Rilevatore CO",
+			"descrizione": "",
+			"type": "toggle",
+			"pos": "1d2nvn"
+		},
+		{
+			"nome": "Rilevatore O₂",
+			"descrizione": "",
+			"type": "toggle",
+			"pos": "1d2nvn"
+		},
+		{
+			"nome": "Bodycam (opzionale)",
+			"descrizione": "A discrezione del capo equipaggio",
+			"type": "toggle",
+			"pos": "1d2nvn"
+		},
+		{
+			"nome": "Traverse salva letto x7",
+			"descrizione": "",
+			"type": "toggle",
+			"pos": "qcnxf6"
+		},
+		{
+			"nome": "Mini aspiratore",
+			"descrizione": "Scollegare dalla carica e provare ad accenderlo.\nCon un tubo di aspirazione secreti e raccordo bi-conico già collegati, 1 sondino VERDE chiuso.",
+			"type": "toggle",
+			"pos": "qcnxf6"
+		},
+		{
+			"nome": "Contenitore porta aghi",
+			"descrizione": "Se pieno, sostituire",
+			"type": "toggle",
+			"pos": "qcnxf6"
+		},
+		{
+			"nome": "Cardiogramma (Cardioline)",
+			"descrizione": "2 buste di elettrodi (Aprire una alla volta), telefono (controllare se carico), Cardioline, caricatore del telefono, garze non sterili q.b., 1 rasoio.\n<b>Il telefono deve essere riposto spento.</b>\nVERIFICARE AUTONOMIA BATTERIA",
+			"type": "toggle",
+			"pos": "qcnxf6"
+		},
+		{
+			"nome": "Padella",
+			"descrizione": "",
+			"type": "toggle",
+			"pos": "qcngqh"
+		},
+		{
+			"nome": "Pappagallo",
+			"descrizione": "",
+			"type": "toggle",
+			"pos": "qcngqh"
+		},
+		{
+			"nome": "Contenitore porta aghi di scorta",
+			"descrizione": "",
+			"type": "toggle",
+			"pos": "qcngqh"
+		},
+		{
+			"nome": "Barella autocaricante FERNO (170kg)",
+			"descrizione": "",
+			"type": "toggle",
+			"pos": "wqn5ci"
+		},
+		{
+			"nome": "Sedia Cardiopatica FERNO (230kg)",
+			"descrizione": "",
+			"type": "toggle",
+			"pos": "wqn5ci"
+		},
+		{
+			"nome": "Estintore da 3kg",
+			"descrizione": "",
+			"type": "toggle",
+			"pos": "wqn5ci"
+		},
+		{
+			"nome": "Ombrello",
+			"descrizione": "",
+			"type": "toggle",
+			"pos": "wqn5ci"
+		},
+		{
+			"nome": "Spinale pediatrica con poggiatesta",
+			"descrizione": "",
+			"type": "toggle",
+			"pos": "wqn5ci"
+		},
+		{
+			"nome": "Spinale adulto con poggiatesta",
+			"descrizione": "Riposta sotto la barella",
+			"type": "toggle",
+			"pos": "wqn5ci"
+		},
+		{
+			"nome": "KIT di estricazione XT",
+			"descrizione": "",
+			"type": "toggle",
+			"pos": "wqn5ci"
+		},
+		{
+			"nome": "Tavola a cucchiaio / Scoop",
+			"descrizione": "",
+			"type": "toggle",
+			"pos": "wqn5ci"
+		},
+		{
+			"nome": "KIT Scasso",
+			"descrizione": "Segue nella prossima sezione...",
+			"type": "toggle",
+			"pos": "wqn5ci"
+		}
+	],
+	"sezioni": [
+		{
+			"nome": "Zaino - Tasca Superiore",
+			"descrizione": "",
+			"colore": "#f6d32d"
+		},
+		{
+			"nome": "Zaino - Parte superiore",
+			"descrizione": "",
+			"colore": "#f6d32d"
+		},
+		{
+			"nome": "Zaino - Tasche interne trasparenti",
+			"descrizione": "",
+			"colore": "#f6d32d"
+		},
+		{
+			"nome": "Zaino - Prima sezione",
+			"descrizione": "",
+			"colore": "#f6d32d"
+		},
+		{
+			"nome": "Zaino - Seconda sezione",
+			"descrizione": "",
+			"colore": "#f6d32d"
+		},
+		{
+			"nome": "Zaino - Terza sezione",
+			"descrizione": "",
+			"colore": "#f6d32d"
+		},
+		{
+			"nome": "Zaino - Quarta sezione",
+			"descrizione": "",
+			"colore": "#f6d32d"
+		},
+		{
+			"nome": "Zaino - Tasche Frontali",
+			"descrizione": "",
+			"colore": "#f6d32d"
+		},
+		{
+			"nome": "DAE",
+			"descrizione": "",
+			"colore": "#e01b24"
+		},
+		{
+			"nome": "Ossigeno",
+			"descrizione": "",
+			"colore": "#1c71d8"
+		},
+		{
+			"nome": "SCOMPARTO ANTA SCORREVOLE INFERIORE",
+			"descrizione": "",
+			"colore": "#dc8add"
+		},
+		{
+			"nome": "Zaino Pediatrico",
+			"descrizione": "",
+			"colore": "#ff7800"
+		},
+		{
+			"nome": "KIT Infettivi",
+			"descrizione": "",
+			"colore": "#3584e4"
+		},
+		{
+			"nome": "KIT Scorta ACC",
+			"descrizione": "",
+			"colore": "#ffbe6f"
+		},
+		{
+			"nome": "SCOMPARTI A PARETE SUPERIORE DX",
+			"descrizione": "",
+			"colore": "#dc8add"
+		},
+		{
+			"nome": "SCOMPARTO A PARETE INFERIORE DX",
+			"descrizione": "",
+			"colore": "#dc8add"
+		},
+		{
+			"nome": "SCOMPARTO A PARETE INFERIORE SX",
+			"descrizione": "",
+			"colore": "#dc8add"
+		},
+		{
+			"nome": "SCOMPARTO SOPRA BOMBOLE VEICOLARI",
+			"descrizione": "",
+			"colore": "#dc8add"
+		},
+		{
+			"nome": "Cassettiera",
+			"descrizione": "",
+			"colore": "#8ff0a4"
+		},
+		{
+			"nome": "Cassettiera - Primo Cassetto",
+			"descrizione": "",
+			"colore": "#8ff0a4"
+		},
+		{
+			"nome": "Cassettiera - Secondo Cassetto",
+			"descrizione": "",
+			"colore": "#8ff0a4"
+		},
+		{
+			"nome": "Cassettiera - Terzo Cassetto",
+			"descrizione": "",
+			"colore": "#8ff0a4"
+		},
+		{
+			"nome": "Cassettiera - Vano Rifiuti",
+			"descrizione": "",
+			"colore": "#8ff0a4"
+		},
+		{
+			"nome": "SCOMPARTO SOPRA PANCA PASSEGGERO",
+			"descrizione": "",
+			"colore": "#dc8add"
+		},
+		{
+			"nome": "INTERNO PANCA PASSEGGERO",
+			"descrizione": "",
+			"colore": "#dc8add"
+		},
+		{
+			"nome": "SCOMPARTO SOPRA IL VANO GUIDA",
+			"descrizione": "",
+			"colore": "#dc8add"
+		},
+		{
+			"nome": "PIANALE APPOGGIO STRUMENTI INFERIORE",
+			"descrizione": "",
+			"colore": "#dc8add"
+		},
+		{
+			"nome": "Vano Sanitario",
+			"descrizione": "",
+			"colore": "#dc8add"
+		},
+		{
+			"nome": "KIT Scasso",
+			"descrizione": "",
+			"colore": "#5e5c64"
+		},
+		{
+			"nome": "Varie",
+			"descrizione": "",
+			"colore": "#5e5c64"
+		}
+	]
+}

@@ -1,0 +1,108 @@
+{
+    "mezzo": "06",
+    "nome": "Ambulanza Test",
+    "tipo": "ambulanza",
+    "materiale": [
+        {
+            "nome": "Cucchiaio",
+            "descrizione": "controllare se si ...",
+            "type": "toggle",
+            "pos": "Portellone Posteriore"
+        },
+        {
+            "nome": "Bombola Ossigeno 3L n°1",
+            "descrizione": "controllare livello ossigeno ...",
+            "type": "value",
+            "pos": "Ossigeno"
+        },
+        {
+            "nome": "Bombola Ossigeno 3L n°2",
+            "descrizione": "controllare livello ossigeno ...",
+            "type": "value",
+            "pos": "Ossigeno"
+        },
+        {
+            "nome": "Bombola Ossigeno 3L n°3",
+            "descrizione": "controllare livello ossigeno ...",
+            "type": "value",
+            "pos": "Ossigeno"
+        },
+        {
+            "nome": "Bombola Ossigeno 7L n°1",
+            "descrizione": "controllare livello ossigeno ...",
+            "type": "value",
+            "pos": "Ossigeno"
+        },
+        {
+            "nome": "Bombola Ossigeno 7L n°2",
+            "descrizione": "controllare livello ossigeno ...",
+            "type": "value",
+            "pos": "Ossigeno"
+        },
+        {
+            "nome": "DAE",
+            "descrizione": "Fare la check del DAE",
+            "type": "toggle",
+            "pos": "Zaino - Sezione interna 2"
+        },
+        {
+            "nome": "2 Sacchetti del vomito",
+            "descrizione": "",
+            "type": "toggle",
+            "pos": "Zaino - Tasca superiore esterna"
+        },
+        {
+            "nome": "1 Traversina",
+            "descrizione": "",
+            "type": "toggle",
+            "pos": "Zaino - Tasca superiore esterna"
+        },
+        {
+            "nome": "Bende di varie misure",
+            "descrizione": "Controllare scadenze",
+            "type": "toggle",
+            "pos": "Zaino - Sezione interna 1"
+        },
+        {
+            "nome": "10 Garze sterili",
+            "descrizione": "Controllare scadenze",
+            "type": "toggle",
+            "pos": "Zaino - Sezione interna 1"
+        },
+        {
+            "nome": "Garze non sterili (quanto basta)",
+            "descrizione": "",
+            "type": "toggle",
+            "pos": "Zaino - Sezione interna 1"
+        }
+    ],
+    "sezioni": [
+        {
+            "nome": "Portellone Posteriore",
+            "descrizione": "Il fondo dell'ambulanza",
+            "colore": "rand"
+        },
+        {
+            "nome": "Ossigeno",
+            "descrizione": "",
+            "colore": "#0298dd"
+        },
+        {
+            "nome": "Zaino - Tasca superiore esterna",
+            "descrizione": "skibidi",
+            "colore": "rand"
+        },
+        {
+            "nome": "Zaino - Tasca interna superiore",
+            "descrizione": ""
+        },
+        {
+            "nome": "Zaino - Sezione interna 1",
+            "descrizione": ""
+        },
+        {
+            "nome": "Zaino - Sezione interna 2",
+            "descrizione": ""
+        }
+    ]
+}
