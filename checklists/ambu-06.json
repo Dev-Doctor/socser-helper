@@ -142,7 +142,7 @@
 			"pos": "jsrv6m"
 		},
 		{
-			"nome": "Garze non sterili (qb)",
+			"nome": "Garze non sterili (q.b.)",
 			"descrizione": "",
 			"type": "toggle",
 			"pos": "jsrv6m"
@@ -172,7 +172,13 @@
 			"pos": "9ud9tv"
 		},
 		{
-			"nome": "Maschera per ossigeno x1",
+			"nome": "Maschere adulto con recevoire per O₂ x1",
+			"descrizione": "Controllare scadenza e integrità",
+			"type": "toggle",
+			"pos": "olctnt"
+		},
+		{
+			"nome": "Maschere adulto semplice per O₂ x1",
 			"descrizione": "Controllare scadenza e integrità",
 			"type": "toggle",
 			"pos": "olctnt"
@@ -424,7 +430,13 @@
 			"pos": "xyc7d5"
 		},
 		{
-			"nome": "Maschere adulto per O₂ x4",
+			"nome": "Maschere adulto con recevoire per O₂ x2",
+			"descrizione": "Controllare scadenza e integrità",
+			"type": "toggle",
+			"pos": "pzsw00"
+		},
+		{
+			"nome": "Maschere adulto semplice per O₂ x2",
 			"descrizione": "Controllare scadenza e integrità",
 			"type": "toggle",
 			"pos": "pzsw00"

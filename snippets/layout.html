@@ -2,12 +2,69 @@
 <nav class="navbar bg-body-tertiary">
     <div class="container-fluid">
         <span class="navbar-brand mb-0 ms-2 h1"><a href="index.html" class="nav-link">Ongeres Soccorso</a></span>
-        <!-- Hamburger button (always visible) -->
-        <button class="btn" type="button" data-bs-toggle="offcanvas" data-bs-target="#sidebar">
-            <i class="bi bi-list fs-1"></i>
-        </button>
+
+        <div class="d-flex align-items-center gap-1">
+            <!-- Theme Button  -->
+            <div class="dropdown">
+                <button class="btn btn-outline-primary border-0 dropdown-toggle" type="button" id="themeDropdown"
+                    data-bs-toggle="dropdown" aria-expanded="false">
+                    <i id="themeIcon" class="bi bi-circle-half"></i>
+                </button>
+
+                <ul class="dropdown-menu z-3" aria-labelledby="themeDropdown">
+                    <li>
+                        <a class="dropdown-item theme-option" href="#" data-theme="light">
+                            <i class="bi bi-sun-fill me-2"></i> Chiaro
+                        </a>
+                    </li>
+                    <li>
+                        <a class="dropdown-item theme-option" href="#" data-theme="dark">
+                            <i class="bi bi-moon-stars-fill me-2"></i> Scuro
+                        </a>
+                    </li>
+                    <li>
+                        <a class="dropdown-item theme-option" href="#" data-theme="auto">
+                            <i class="bi bi-circle-half me-2"></i> Auto
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <!-- Hamburger button (always visible) -->
+            <button class="btn" type="button" data-bs-toggle="offcanvas" data-bs-target="#sidebar">
+                <i class="bi bi-list fs-1"></i>
+            </button>
+        </div>
     </div>
 </nav>
+
+<!-- CODICE PER CAMBIARE IL TEMA -->
+<script>
+    $(document).ready(function () {
+        function applyTheme(theme) {
+            if (theme === "auto") {
+                const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+                $("html").attr("data-bs-theme", prefersDark ? "dark" : "light");
+                $("#themeIcon").attr("class", "bi bi-circle-half");
+            } else {
+                $("html").attr("data-bs-theme", theme);
+                $("#themeIcon").attr("class", theme === "dark" ? "bi bi-moon-stars-fill" : "bi bi-sun-fill");
+            }
+
+            localStorage.setItem("theme", theme);
+        }
+
+        // Load saved theme
+        const savedTheme = localStorage.getItem("theme") || "auto";
+        applyTheme(savedTheme);
+
+        // Click handler
+        $(".theme-option").on("click", function (e) {
+            e.preventDefault();
+            const selectedTheme = $(this).data("theme");
+            applyTheme(selectedTheme);
+        });
+    });
+</script>
 
 <!-- SIDEBAR -->
 <div class="offcanvas offcanvas-end" tabindex="-1" id="sidebar">
@@ -16,16 +73,32 @@
         <button type="button" class="btn-close" data-bs-dismiss="offcanvas"></button>
     </div>
 
-    <div class="offcanvas-body">
+    <div class="offcanvas-body d-flex flex-column">
         <ul class="nav flex-column">
-            <li class="nav-item d-flex align-items-center gap-2">
+            <li class="nav-item d-flex align-items-center gap-1">
                 <i class="bi bi-list fs-1"></i>
-                <a class="nav-link" href="#">Dashboard</a>
+                <a class="nav-link" href="index.html">Dashboard</a>
             </li>
-            <li class="nav-item"><a class="nav-link" href="checklists.html">Checklists</a></li>
-            <li class="nav-item"><a href="calcolatore-secondari.html" class="nav-link">Prezzo Secondari</a></li>
-            <li class="nav-item"><a class="nav-link" href="#">Turni</a></li>
-            <li class="nav-item"><a class="nav-link" href="#">Personale</a></li>
+            <li class="nav-item d-flex align-items-center gap-1">
+                <i class="bi bi-card-checklist fs-1"></i>
+                <a class="nav-link" href="checklists.html">Checklists</a>
+            </li>
+            <li class="nav-item d-flex align-items-center gap-1">
+                <i class="bi bi-calculator fs-1"></i>
+                <a href="calcolatore-secondari.html" class="nav-link">Prezzo Secondari</a>
+            </li>
+            <li class="nav-item d-flex align-items-center gap-1">
+                <i class="bi bi-clock fs-1"></i>
+                <span class="nav-link link-secondary" href="#"><i>Turni</i></span>
+            </li>
+            <li class="nav-item d-flex align-items-center gap-1">
+                <i class="bi bi-journals fs-1"></i>
+                <span class="nav-link link-secondary" href="#"><i>Personale</i></span>
+            </li>
         </ul>
+
+        <div class="mt-auto text-center">
+            <i>Made with love by <a href="https://dev-doctor.github.io/">DevDoctor</a></i>
+        </div>
     </div>
 </div>
