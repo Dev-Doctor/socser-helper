@@ -12,12 +12,12 @@ function LoadChecklists() {
     let result = [];
     let deferred = $.Deferred();
 
-    $.getJSON("/checklists/index.json", function (fileList) {
+    $.getJSON("checklists/index.json", function (fileList) {
         let requests = [];
 
         $.each(fileList, function (index, fileName) {
 
-            let request = $.getJSON(`/checklists/${fileName}.json`, function (fileData) {
+            let request = $.getJSON(`checklists/${fileName}.json`, function (fileData) {
                 result.push({ id: fileName, data: fileData });
             });
 

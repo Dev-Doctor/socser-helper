@@ -110,17 +110,10 @@
         crossorigin="anonymous"></script>
 
     <script>
-        $.get("/template/sidebar.html", function (data) {
+        $.get("template/sidebar.html", function (data) {
             $("body").prepend(data);
         });
-        // $.get("/template/cardContainer.html", function (data) {
-        //     $("body").append(data);
-        // });
-        // $("#cardContainer-placeholder").load("/template/cardContainer.html");
-        // $("#footer-placeholder").load("/template/footer.html");
-        // $.get("/template/footer.html", function (data) {
-        //     $("body").append(data);
-        // });
+        
         window.onload = function () {
             dropDownQualifiche();
             dropDownTurno();

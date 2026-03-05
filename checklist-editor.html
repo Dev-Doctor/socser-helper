@@ -1,5 +1,32 @@
+<!--
+╔══════════════════════════════════════════════════════════════╗
+║  Greetings, curious developer.                               ║
+║                                                              ║
+║  If you're reading this, you probably opened the source      ║
+║  out of curiosity, to learn something, or to get inspired.   ║
+║  That's perfectly fine and I am very happy that you are      ║
+║  intrested in my code <3.                                    ║
+║                                                              ║
+║  Feel free to crawl around behind my web pages, I usually    ║
+║  keep all my comments and I don't obfuscate anything.        ║
+║                                                              ║
+║  However, if you intend to reuse significant portions of it, ║
+║  please respect the license under which this project is      ║
+║  distributed:                                                ║
+║                                                              ║
+║        GNU GENERAL PUBLIC LICENSE Version 3 (GPLv3)          ║
+║                                                              ║
+║  In short: share alike, keep the license, and give credit.   ║
+║                                                              ║
+║  Be respectful of the work that went into this project.      ║
+║                                                              ║
+║  Don't be a jerk.                                            ║
+║                                                              ║
+║  Happy coding <3                                             ║
+╚══════════════════════════════════════════════════════════════╝
+-->
 <!DOCTYPE html>
-<html lang="en">
+<html lang="it">
 
 <head>
     <meta charset="UTF-8">
@@ -16,13 +43,13 @@
 </head>
 
 <body>
+    <!-- MESSAGE ALERT -->
     <div class="d-flex justify-content-center mt-3">
         <div class="alert alert-warning d-flex align-items-center w-60" role="alert">
             <i class="bi flex-shrink-0 me-2 bi-exclamation-triangle-fill"></i>
             <div>
                 <i><strong>Oh oh!</strong> Sembra che tu sia finito su una pagina di sviluppo, è improbabile che ti
                     serva questa pagina.</i>
-                <!-- <hr> -->
             </div>
         </div>
     </div>
@@ -145,7 +172,7 @@
                     <tbody id="listCategories">
                         <!-- <tr>
                             <td>Ossigeno</td>
-                            <td>Nigga</td>
+                            <td>x</td>
                             <td style="background-color: red;"></td>
                             <td><button class="btn btn-danger deleteLineBtn">x</button></td>
                         </tr> -->
@@ -168,7 +195,7 @@
                     <tbody id="listMaterials">
                         <!-- <tr>
                             <td>Ossigeno</td>
-                            <td>Nigga</td>
+                            <td>x</td>
                             <td style="background-color: red;"></td>
                             <td><button class="btn btn-danger deleteLineBtn">x</button></td>
                         </tr> -->
@@ -203,7 +230,17 @@
 <script src="javascript/checklistFunctions.js"></script>
 
 <script>
-    $.get("/snippets/layout.html", function (data) {
+    /*
+    ╔══════════════════════════════════════════════════════════════╗
+    ║ Hi again...                                                  ║
+    ║ This code is pretty bad and chaothic,                        ║
+    ║ it was rushed for a deadline.                                ║
+    ║                                                              ║
+    ║ It may be refined in the future, although it works fine so   ║
+    ║ it is good for now.                                          ║
+    ╚══════════════════════════════════════════════════════════════╝
+    */
+    $.get("snippets/layout.html", function (data) {
         $("body").prepend(data);
     });
 
@@ -292,7 +329,7 @@
             return;
         }
 
-        fetch(`/checklists/${selected_checklist}.json`).then(response => response.json()).then(
+        fetch(`checklists/${selected_checklist}.json`).then(response => response.json()).then(
             data => {
                 $("#inputVehicleName").val(data.mezzo);
                 $("#inputVehicleType").val(data.tipo).change();
