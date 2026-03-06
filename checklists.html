@@ -83,7 +83,7 @@
 
     window.onload = function () {
         // Fetch index.json
-        $.getJSON("checklists/index.json", function (fileList) {
+        $.getJSON("./checklists/index.json", function (fileList) {
 
             // Loop through array
             $.each(fileList, function (index, fileName) {
