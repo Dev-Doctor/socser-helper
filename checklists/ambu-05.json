@@ -76,7 +76,7 @@
 			"pos": "x0wzg4"
 		},
 		{
-			"nome": "Tourniquet",
+			"nome": "Fascia in para",
 			"descrizione": "",
 			"type": "toggle",
 			"pos": "x0wzg4"
@@ -161,7 +161,7 @@
 		},
 		{
 			"nome": "Ambu monouso",
-			"descrizione": "da sistemare",
+			"descrizione": "Controllare integrità del sacchetto e funzionalità",
 			"type": "toggle",
 			"pos": "9ud9tv"
 		},
@@ -185,7 +185,7 @@
 		},
 		{
 			"nome": "DAE",
-			"descrizione": "Segue nella prossima sezione...",
+			"descrizione": "Segue in una prossima sezione...",
 			"type": "toggle",
 			"pos": "olctnt"
 		},
@@ -227,19 +227,19 @@
 		},
 		{
 			"nome": "KIT Borsa Pediatrica",
-			"descrizione": "Segue nella prossima sezione...",
+			"descrizione": "Segue in una prossima sezione...",
 			"type": "toggle",
 			"pos": "psms3x"
 		},
 		{
 			"nome": "KIT Infettivi",
-			"descrizione": "Segue nella prossima sezione...",
+			"descrizione": "Segue in una prossima sezione...",
 			"type": "toggle",
 			"pos": "psms3x"
 		},
 		{
 			"nome": "KIT Scorta ACC",
-			"descrizione": "Segue nella prossima sezione...",
+			"descrizione": "Segue in una prossima sezione...",
 			"type": "toggle",
 			"pos": "psms3x"
 		},
@@ -761,7 +761,7 @@
 		},
 		{
 			"nome": "KIT Scasso",
-			"descrizione": "Segue nella prossima sezione...",
+			"descrizione": "Segue in una prossima sezione...",
 			"type": "toggle",
 			"pos": "wqn5ci"
 		}

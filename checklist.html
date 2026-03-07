@@ -142,7 +142,7 @@
                 // Materiali
                 $.each(data.materiale, function (i, v) {
                     console.log(`Materiale: ${v.nome} e ${v.pos} e ${MakeId(v.pos)}`); // data-onstyle="success" data-offstyle="danger"
-                    $(`#${v.pos}`).append(`<div class="card"><div class="card-body"><div class="d-flex"><div class="w-100"><span class="h5">${v.nome}</span></div><div class="ml-auto"><input type="checkbox" class="toggles" data-toggle="toggle" data-on="✅" data-off="❌" data-onstyle="outline-success" data-offstyle="outline-danger"></div></div> <div class="row"> <div class="col"> <p class="card-text"> ${v.descrizione} </p> </div> <div class="col"></div></div> </div> </div>`);
+                    $(`#${v.pos}`).append(`<div class="card"><div class="card-body"><div class="d-flex"><div class="w-100"><span class="h5">${v.nome}</span></div><div class="ml-auto"><input type="checkbox" class="toggles" data-toggle="toggle" data-on="✅" data-off="❌" data-onstyle="outline-success" data-offstyle="outline-danger"></div></div> <div class="row"> <div class="col"> <p class="card-text"> ${v.descrizione} </p> </div></div> </div> </div>`);
                 });
 
 

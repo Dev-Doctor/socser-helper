@@ -43,21 +43,35 @@
 </head>
 
 <body>
+    <style>
+        input[type=radio] {
+            transform: scale(1.5);
+        }
+
+        .questionmark {
+            cursor: help;
+            text-decoration-line: underline;
+            text-decoration-color: green;
+            text-decoration-style: wavy;
+        }
+    </style>
+
     <div class="container mt-3">
         <div class="row">
             <form id="calculateForm">
                 <!-- ######################## TIPO SERVIZIO ######################## -->
                 <div class="mb-3">
-                    <div class="form-check form-check-inline">
+                    <div class="form-check form-switch form-check-inline">
                         <input class="form-check-input" type="radio" name="tipoServizio" id="ServizioRadio1"
                             value="dimissione" checked>
-                        <label class="form-check-label" for="inlineRadio2">Trasporto senza attesa (es.
+                        <label class="form-check-label ps-2" for="inlineRadio2">Trasporto senza attesa (es.
                             Dimissione)</label>
                     </div>
-                    <div class="form-check form-check-inline">
+                    <div class="form-check form-switch form-check-inline pt-3">
                         <input class="form-check-input" type="radio" name="tipoServizio" id="ServizioRadio2"
                             value="visita">
-                        <label class="form-check-label" for="inlineRadio1">Trasporto con attesa (es. Visita)</label>
+                        <label class="form-check-label ps-2" for="inlineRadio1">Trasporto con attesa (es.
+                            Visita)</label>
                     </div>
                 </div>
                 <!-- ######################## MEZZO ######################## -->
@@ -73,19 +87,21 @@
                 <div class="mb-3">
                     <label for="chilometriInput" class="form-label">Chilometri del servizio:</label>
                     <div class="input-group">
-                        <input type="number" class="form-control" id="chilometriInput" min="0">
+                        <input type="number" class="form-control" id="chilometriInput" min="0" required>
                         <span class="input-group-text" id="KmPriceLabel">?</span>
                     </div>
-                    <div class="form-text">Inserire il <b>TOTALE</b> dei chilometri, i 15km inclusi vengono tolti automaticamente.</div>
+                    <div class="form-text">Inserire il <b>TOTALE</b> dei chilometri, i 15km inclusi vengono tolti
+                        automaticamente.</div>
                 </div>
                 <!-- ######################## TEMPO DI ATTESA ######################## -->
                 <div class="mb-3">
                     <label for="attesaInput" class="form-label" id="attesaHelp">Tempo di attesa (in minuti):</label>
                     <div class="input-group">
-                        <input type="number" class="form-control" id="attesaInput" min="0" disabled>
+                        <input type="number" class="form-control" id="attesaInput" min="0" disabled required>
                         <span class="input-group-text" id="WaitingPriceLabel">?</span>
                     </div>
-                    <div class="form-text">Inserire il <b>TOTALE</b> dei minuti passati in attesa, l'ora e mezza inclusi vengono tolti automaticamente.</div>
+                    <div class="form-text">Inserire il <b>TOTALE</b> dei minuti passati in attesa, l'ora e mezza inclusi
+                        vengono tolti automaticamente.</div>
                 </div>
                 <button type="submit" class="btn btn-primary">Calcola</button>
             </form>
@@ -93,7 +109,9 @@
         <div class="row">
             <div class="col">
                 <h1 id="result"></h1>
-                <i><h4 id="formule"></h4></i>
+                <i>
+                    <h4 id="formule"></h4>
+                </i>
             </div>
         </div>
     </div>
@@ -178,6 +196,7 @@
         }
     });
 
+    // Logica quando viene premuto il pulsante calcola
     $('#calculateForm').on('submit', function (e) {
         e.preventDefault();
 
@@ -189,35 +208,44 @@
         }
 
         var result = parseFloat(data.km) * parseInt(kilometers);
-        var formule = `Formula: ${data.km} × ${kilometers}`;
-        
+        var formule = `<span class="questionmark" data-bs-toggle="tooltip" data-bs-title="Il prezzo di un chilometro">${data.km}</span> × <span class="questionmark" data-bs-toggle="tooltip" data-bs-title="I chilometri percorsi oltre ai 15 inclusi">${kilometers}</span>`;
+
         if ($('input[type=radio][name=tipoServizio]:checked').val() == "visita") {
             let minutes = $("#attesaInput").val();
             let quarters = parseInt(minutes / 15);
 
             // se è maggiore della divisone vuol dire che avanza del tempo che rientrerà in un quarto aggiuntivo
             // (es. 50 / 15 = 3 con resto di 5)
-            if(minutes % 15 !== 0) {
+            if (minutes % 15 !== 0) {
                 quarters += 1;
             }
 
             // tolta l'ora e mezza inclusa con il prezzo base della visita
             quarters -= 6;
-            
-            if(quarters < 0) {
+
+            if (quarters < 0) {
                 quarters = 0;
             }
-            
+
             result += parseInt(data.min) * quarters + parseInt(data.vis);
-            formule += ` + ${data.min} × ${quarters} + ${data.vis}`;
+            formule += ` + <span class="questionmark" data-bs-toggle="tooltip" data-bs-title="Il prezzo di un quarto d'ora">${data.min}</span> × <span class="questionmark" data-bs-toggle="tooltip" data-bs-title="Il numero di quarti d'ora oltre all'ora e mezza inclusa">${quarters}</span>`;
+            formule = `<span class="questionmark" data-bs-toggle="tooltip" data-bs-title="Il prezzo del mezzo">${data.vis}</span> + ` + formule;
         } else {
             result += parseInt(data.dim);
-            formule += ` + ${data.dim}`;
+            formule = `<span class="questionmark" data-bs-toggle="tooltip" data-bs-title="Il prezzo del mezzo">${data.dim}</span> + ` + formule;
         }
 
+        // simbolo della moltiplicazione col cdot salvato qui --> ⋅ <--
+        formule = "Formula: " + formule;
         $("#result").text(`Costo del trasporto: ${result}€`);
-        $("#formule").text(formule);
+        $("#formule").html(formule);
+        InitializeTooltips();
     });
+
+    function InitializeTooltips() {
+        const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]');
+        const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl));
+    }
 
     $(document).ready(function () {
         $('input[type=radio][name=tipoServizio]:checked').trigger("change");

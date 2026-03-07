@@ -92,10 +92,28 @@
                         </ul>
                     </div>
                     <!-- AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA -->
+
+                    
                 </div>
             </div>
             <div class="col-sm p-3 min-vh-100">
                 <!-- content -->
+                 <div class="card">
+                        <div class="card-body">
+                            <div class="d-flex">
+                                <div class="w-100"><span class="h5">${v.nome}</span></div>
+                                <div class="ml-auto"><input type="checkbox" class="toggles" data-toggle="toggle"
+                                        data-on="✅" data-off="❌" data-onstyle="outline-success"
+                                        data-offstyle="outline-danger"></div>
+                            </div>
+                            <div class="row">
+                                <div class="col">
+                                    <p class="card-text"> ${v.descrizione} </p>
+                                </div>
+                                <div class="col"></div>
+                            </div>
+                        </div>
+                    </div>
             </div>
         </div>
     </div>
@@ -113,7 +131,7 @@
         $.get("template/sidebar.html", function (data) {
             $("body").prepend(data);
         });
-        
+
         window.onload = function () {
             dropDownQualifiche();
             dropDownTurno();
